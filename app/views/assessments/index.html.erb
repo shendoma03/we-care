@@ -1,0 +1,32 @@
+<h1>All questions</h1>
+<%= link_to 'Add question', new_assessment_path %>
+<table class="table table-hover">
+  <tr>
+    <th>Question</th>
+    <th>Choice 1 </th>
+    <th>Score  1 </th>
+    <th>Choice 2 </th>
+    <th>Score  2 </th>
+    <th>Choice 3 </th>
+    <th>Score  3 </th>
+    <th>Choice 4 </th>
+    <th>Score  4 </th>
+  </tr>
+
+  <% @assessment.each do |assessment| %>
+      <tr>
+        <td><%= assessment.question %></td>
+        <td><%= assessment.choice1 %></td>
+        <td><%= assessment.score1 %></td>
+        <td><%= assessment.choice2 %></td>
+        <td><%= assessment.score2 %></td>
+        <td><%= assessment.choice3 %></td>
+        <td><%= assessment.score3 %></td>
+        <td><%= assessment.choice4 %></td>
+        <td><%= assessment.score4 %></td>
+        <td><%= link_to 'Show', assessment_path(assessment) %></td>
+        <td><%= link_to 'Edit', edit_assessment_path(assessment) %></td>
+      </tr>
+  <% end %>
+
+</table>

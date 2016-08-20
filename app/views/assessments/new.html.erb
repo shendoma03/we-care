@@ -1,0 +1,59 @@
+<h1>Create new question</h1>
+
+<%= link_to 'Back', assessments_path %>
+
+<%= form_for :assessment, url: assessments_path do |f| %>
+
+    <% if @assessment.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@assessment.errors.count, "error") %> prohibited
+            this assessment from being saved:
+          </h2>
+          <ul>
+            <% @assessment.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+<div>
+    <p>
+      <%= f.label "Question"%><br>
+      <%= f.text_area :question %>
+    </p>
+
+    <p>
+      <%= f.label "Choice1:"%><br>
+      <%= f.text_area :choice1 %>
+      <%= f.label "Score:"%>
+      <%= f.text_area :score1 %>
+
+    </p>
+
+    <p>
+      <%= f.label "Choice2:"%><br>
+      <%= f.text_area :choice2 %>
+      <%= f.label "Score:"%>
+      <%= f.text_area :score2 %>
+    </p>
+
+    <p>
+      <%= f.label "Choice3:"%><br>
+      <%= f.text_area :choice3 %>
+      <%= f.label "Score:"%>
+      <%= f.text_area :score3 %>
+    </p>
+
+    <p>
+      <%= f.label "Choice4:"%><br>
+      <%= f.text_area :choice4 %>
+      <%= f.label "Score:"%>
+      <%= f.text_area :score4 %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+</div>
+<% end %>
