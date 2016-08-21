@@ -16,15 +16,7 @@ class AssessmentsController < ApplicationController
     @assessment = Assessment.all
   end
 
-  def update
-    @assessment = Assessment.find(params[:id])
 
-    if @assessment.update(assessment_param)
-      redirect_to @assessment
-    else
-      render 'edit'
-    end
-  end
 
   def create
     #render plain: params[:assessment].inspect
@@ -38,6 +30,16 @@ class AssessmentsController < ApplicationController
       render 'new'
     end
 
+  end
+
+  def update
+    @assessment = Assessment.find(params[:id])
+
+    if @assessment.update(assessment_param)
+      redirect_to @assessment
+    else
+      render 'edit'
+    end
   end
 
   private

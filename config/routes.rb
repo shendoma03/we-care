@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   get 'assessments/new'
- 
+ post 'assessments/edit'
 
   root 'welcome#index'
   resources :assessments
