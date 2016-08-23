@@ -3,19 +3,8 @@
 <%= form_for :assessment, url: assessment_path(@assessment), method: :patch do |f| %>
 
     <% if @assessment.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@assessment.errors.count, "error") %> prohibited
-            this article from being saved:
-          </h2>
-          <ul>
-            <% @assessment.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
+        <h1>Something went wrong see error message bellow</h1>
     <% end %>
-
 
     <p>
       <%= f.label "Question" %><br>
@@ -63,6 +52,20 @@
       <%= f.submit %>
     </p>
 
+<% end %>
+
+<% if @assessment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@assessment.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @assessment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
 <% end %>
 
 <%= link_to 'Back', assessments_path %>

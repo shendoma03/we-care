@@ -42,6 +42,13 @@ class AssessmentsController < ApplicationController
     end
   end
 
+  def destroy
+    @assessment = Assessment.find(params[:id])
+    @assessment.destroy
+
+    redirect_to assessments_path
+  end
+
   private
     def assessment_param
       params.require(:assessment).permit(:question, :choice1,:score1, :choice2,:score2,

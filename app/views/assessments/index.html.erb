@@ -26,6 +26,10 @@
         <td><%= assessment.score4 %></td>
         <td><%= link_to 'Show', assessment_path(assessment) %></td>
         <td><%= link_to 'Edit', edit_assessment_path(assessment) %></td>
+
+        <td><%= link_to 'Destroy', assessment_path(assessment),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
 
