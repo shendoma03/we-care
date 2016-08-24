@@ -1,0 +1,27 @@
+<h1>All questions</h1>
+<%= link_to 'Add question', new_assessment_path %>
+<table class="table table-hover">
+
+  <tr>
+    <th>Question</th>
+    <th>Choice 1 </th>
+    <th>Choice 2 </th>
+    <th>Choice 3 </th>
+    <th>Choice 4 </th>
+  </tr>
+
+  <% @assessment.each do |assessment| %>
+      <%= form_for :assessment, url: assessments_path do |f| %>
+      <tr>
+        <td><p><%= assessment.question %></p></td>
+
+        <td align="left"><input type="radio" name="choice" value="<%= :choice1%>"> <br><%= assessment.choice1 %></td>
+        <td align="left"><input type="radio" name="choice" value="<%= :choice2%>"> <br><%= assessment.choice2 %></td>
+        <td align="left"><input type="radio" name="choice" value="<%= :choice3%>"> <br><%= assessment.choice3 %></td>
+        <td align="left"><input type="radio" name="choice" value="<%= :choice4%>"> <br><%= assessment.choice4 %></td>
+
+      </tr>
+      <% end %>
+  <% end %>
+
+</table>

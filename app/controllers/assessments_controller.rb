@@ -16,6 +16,15 @@ class AssessmentsController < ApplicationController
     @assessment = Assessment.all
   end
 
+  def quiz
+    @assessment = Assessment.all
+  end
+
+  def wew
+
+  end
+
+
 
 
   def create
