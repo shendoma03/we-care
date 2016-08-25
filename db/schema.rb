@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20160826021926) do
 
+  create_table "admins", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "assessments", force: :cascade do |t|
     t.text     "question"
     t.text     "choice1"
@@ -30,19 +39,11 @@ ActiveRecord::Schema.define(version: 20160826021926) do
     t.string   "group_name"
     t.text     "description"
     t.string   "category"
-    t.string   "contact"
+    t.text     "contact"
     t.string   "location"
     t.string   "img"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "results", force: :cascade do |t|
-    t.decimal  "score"
-    t.string   "rstat"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
