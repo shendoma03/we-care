@@ -1,8 +1,9 @@
 <h1>All questions</h1>
-<%= link_to 'Add question', new_assessment_path %>
+
 <table class="table table-hover">
 
   <tr>
+
     <th>Question</th>
     <th>Choice 1 </th>
     <th>Choice 2 </th>
@@ -20,8 +21,11 @@
         <td align="left"><input type="radio" name="choice" value="<%= :choice3%>"> <br><%= assessment.choice3 %></td>
         <td align="left"><input type="radio" name="choice" value="<%= :choice4%>"> <br><%= assessment.choice4 %></td>
 
-      </tr>
+      </tr><br>
+          <%= f.submit %>
+
       <% end %>
   <% end %>
+
 
 </table>

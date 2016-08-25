@@ -1,4 +1,5 @@
 class AssessmentsController < ApplicationController
+  before_action :require_user, only: [:index, :show, :new]
 
   def show
     @assessment = Assessment.find(params[:id])
