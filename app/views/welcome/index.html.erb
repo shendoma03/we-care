@@ -1,6 +1,6 @@
 <h1>Welcome Admin</h1>
 
-<%= link_to 'Assessments', controller: 'assessments' %><br>
+<%= link_to 'Assessments', controller: 'assessments' %>
 <%= link_to 'Groups/Orgs', controller: 'groups' %>
 
 <% if current_user %>
@@ -10,7 +10,7 @@
     </ul>
 <% else %>
     <ul>
-      <li><%= link_to "Login", controller: 'assessments' %></a></li> :TODO
+      <li><%= link_to "Login", 'login' %></a></li>
       <li><%= link_to "Signup", 'signup' %></a></li>
     </ul>
 <% end %>
