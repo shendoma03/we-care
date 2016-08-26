@@ -1,0 +1,52 @@
+<h1>New groups</h1>
+
+<%= form_for :group, url: groups_path do |f| %>
+<% if @group.errors.any? %>
+    <h1>Something went wrong see error message bellow</h1>
+<% end %>
+
+<div>
+
+  <p>
+    <%= f.text_field :group_name, :placeholder => "Group Name" %><br>
+  </p>
+  <p>
+    <%= f.text_area :description, :placeholder => "Description" %><br>
+  </p>
+  <p>
+    <%= f.text_field :category, :placeholder => "Category" %><br>
+  </p>
+
+  <p>
+    <%= f.text_area :contact, :placeholder => "Contact Info" %><br>
+  </p>
+
+  <p>
+    <%= f.text_field :location, :placeholder => "Location" %><br>
+  </p>
+  <p>
+    <%= f.text_field :img, :placeholder => "Image Link" %><br>
+  </p>
+
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+</div>
+
+<% end %>
+
+<% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@group.errors.count, "error") %> prohibited
+        this assessment from being saved:
+      </h2>
+      <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'assessments/quiz'
   post 'assessments/edit'
 
+  get 'groups/new'
+  resources :groups
   get 'signup'  => 'users#new'
   resources :users
 

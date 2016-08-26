@@ -1,0 +1,28 @@
+<h1>List of all groups</h1>
+
+<tr>
+  <th>Question</th>
+  <th>Choice 1 </th>
+  <th>Score  1 </th>
+  <th>Choice 2 </th>
+  <th>Score  2 </th>
+  <th>Choice 3 </th>
+  <th>Score  3 </th>
+  <th>Choice 4 </th>
+  <th>Score  4 </th>
+</tr>
+
+<% @group.each do |group| %>
+    <tr>
+      <td><%= group.group_name %></td>
+      <td><%= group.choice1 %></td>
+      <td><%= group.score1 %></td>
+      <td><%= group.choice2 %></td>
+      <td><%= group.score2 %></td>
+      <td><%= group.choice3 %></td>
+      <td><%= group.score3 %></td>
+      <td><%= group.choice4 %></td>
+      <td><%= group.score4 %></td>
+
+
+<% end %>

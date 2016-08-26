@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824231746) do
-
-  create_table "admins", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
+ActiveRecord::Schema.define(version: 20160826021926) do
 
   create_table "assessments", force: :cascade do |t|
     t.text     "question"
@@ -31,6 +22,25 @@ ActiveRecord::Schema.define(version: 20160824231746) do
     t.decimal  "score3"
     t.text     "choice4"
     t.decimal  "score4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "group_name"
+    t.text     "description"
+    t.string   "category"
+    t.string   "contact"
+    t.string   "location"
+    t.string   "img"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.decimal  "score"
+    t.string   "rstat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -25,9 +25,6 @@ class AssessmentsController < ApplicationController
 
   end
 
-
-
-
   def create
     #render plain: params[:assessment].inspect
 
