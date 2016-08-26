@@ -1,0 +1,61 @@
+<h1>Editing Groups</h1>
+
+<%= form_for :group, url: group_path(@group), method: :patch do |f| %>
+
+    <% if @group.errors.any? %>
+        <h1>Something went wrong see error message bellow</h1>
+    <% end %>
+
+    <p>
+      <strong>Current Logo</strong>
+      <img src="<%= @group.img %>"  style="width:304px;height:228px;">
+
+    </p>
+
+    <h4>Group name:</h4>
+    <p>
+      <%= f.text_field :group_name, :placeholder => "Group Name" %><br>
+    </p>
+    <h4>Description:</h4>
+    <p>
+      <%= f.text_area :description, :placeholder => "Description" %><br>
+    </p>
+    <h4>Category:</h4>
+    <p>
+      <%= f.text_field :category, :placeholder => "Category" %><br>
+    </p>
+    <h4>Contact Information:</h4>
+    <p>
+      <%= f.text_area :contact, :placeholder => "Contact Info" %><br>
+    </p>
+    <h4>Location:</h4>
+    <p>
+      <%= f.text_field :location, :placeholder => "Location" %><br>
+    </p>
+    <h4>Enter Image Link for logo:</h4>
+    <p>
+      <%= f.text_field :img, :placeholder => "Image Link" %><br>
+    </p>
+
+
+
+    <p>
+      <%= f.submit %>
+    </p>
+    </div>
+
+<% end %>
+
+<% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@group.errors.count, "error") %> prohibited
+        this assessment from being saved:
+      </h2>
+      <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

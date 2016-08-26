@@ -1,28 +1,28 @@
 <h1>List of all groups</h1>
-
+<table class="table table-hover">
 <tr>
-  <th>Question</th>
-  <th>Choice 1 </th>
-  <th>Score  1 </th>
-  <th>Choice 2 </th>
-  <th>Score  2 </th>
-  <th>Choice 3 </th>
-  <th>Score  3 </th>
-  <th>Choice 4 </th>
-  <th>Score  4 </th>
+  <th>Group Name</th>
+  <th>Description</th>
+  <th>Category</th>
+  <th>Contact</th>
+  <th>Location</th>
+
 </tr>
 
-<% @group.each do |group| %>
+  <% @group.each do |group| %>
     <tr>
       <td><%= group.group_name %></td>
-      <td><%= group.choice1 %></td>
-      <td><%= group.score1 %></td>
-      <td><%= group.choice2 %></td>
-      <td><%= group.score2 %></td>
-      <td><%= group.choice3 %></td>
-      <td><%= group.score3 %></td>
-      <td><%= group.choice4 %></td>
-      <td><%= group.score4 %></td>
+      <td><%= group.description %></td>
+      <td><%= group.category %></td>
+      <td><%= group.contact %></td>
+      <td><%= group.location %></td>
 
+      <td><%= link_to 'View Group', group_path(group) %></td>
+      <td><%= link_to 'Edit Group Info', edit_group_path(group) %></td>
+      <td><%= link_to 'Destroy', group_path(group),
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
 
-<% end %>
+</table>

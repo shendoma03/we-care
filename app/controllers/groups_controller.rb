@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-
+  before_action :require_user, only: [:index, :show, :new]
   def new
     @group = Group.new
   end
@@ -10,6 +10,20 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+  end
+
+  def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+
+    if @group.update(group_param)
+      redirect_to @group
+    else
+      render 'edit'
+    end
   end
 
   def create
@@ -23,6 +37,13 @@ class GroupsController < ApplicationController
       render 'new'
     end
 
+  end
+
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+
+    redirect_to groups_path
   end
 
   private
